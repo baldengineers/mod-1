@@ -20,11 +20,6 @@ BEGIN_NETWORK_TABLE( CBaseProjectile, DT_BaseProjectile )
 END_NETWORK_TABLE()
 
 
-#ifndef CLIENT_DLL
-IMPLEMENT_AUTO_LIST( IBaseProjectileAutoList );
-#endif // !CLIENT_DLL
-
-
 //-----------------------------------------------------------------------------
 // Purpose: Constructor.
 //-----------------------------------------------------------------------------

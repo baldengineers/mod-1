@@ -348,8 +348,7 @@ bool VideoPanel_Create( unsigned int nXPos, unsigned int nYPos,
 	// Start it going
 	if ( pVideoPanel->BeginPlayback( pVideoFilename ) == false )
 	{
-		pVideoPanel->MarkForDeletion();
-		pVideoPanel = NULL;
+		delete pVideoPanel;
 		return false;
 	}
 

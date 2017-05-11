@@ -585,9 +585,7 @@ CBasePlayer::CBasePlayer( )
 	m_bForceOrigin = false;
 	m_hVehicle = NULL;
 	m_pCurrentCommand = NULL;
-	m_iLockViewanglesTickNumber = 0;
-	m_qangLockViewangles.Init();
-
+	
 	// Setup our default FOV
 	m_iDefaultFOV = g_pGameRules->DefaultFOV();
 
@@ -978,7 +976,7 @@ void CBasePlayer::DamageEffect(float flDamage, int fDamageType)
 	}
 	else if (fDamageType & DMG_DROWN)
 	{
-		//Blue damage indicator
+		//Red damage indicator
 		color32 blue = {0,0,128,128};
 		UTIL_ScreenFade( this, blue, 1.0f, 0.1f, FFADE_IN );
 	}
@@ -2327,7 +2325,6 @@ bool CBasePlayer::SetObserverMode(int mode )
 			break;
 
 		case OBS_MODE_CHASE :
-		case OBS_MODE_POI: // PASSTIME
 		case OBS_MODE_IN_EYE :	
 			// udpate FOV and viewmodels
 			SetObserverTarget( m_hObserverTarget );	
@@ -2423,7 +2420,8 @@ void CBasePlayer::CheckObserverSettings()
 	}
 
 	// check if our spectating target is still a valid one
-	if (  m_iObserverMode == OBS_MODE_IN_EYE || m_iObserverMode == OBS_MODE_CHASE || m_iObserverMode == OBS_MODE_FIXED || m_iObserverMode == OBS_MODE_POI )
+	
+	if (  m_iObserverMode == OBS_MODE_IN_EYE || m_iObserverMode == OBS_MODE_CHASE || m_iObserverMode == OBS_MODE_FIXED )
 	{
 		ValidateCurrentObserverTarget();
 				
@@ -2635,10 +2633,7 @@ bool CBasePlayer::SetObserverTarget(CBaseEntity *target)
 		Vector	dir, end;
 		Vector	start = target->EyePosition();
 		
-		QAngle ang = target->EyeAngles();
-		ang.z = 0; // PASSTIME no view roll when spectating ball
-
-		AngleVectors( ang, &dir );
+		AngleVectors( target->EyeAngles(), &dir );
 		VectorNormalize( dir );
 		VectorMA( start, -64.0f, dir, end );
 
@@ -2648,7 +2643,7 @@ bool CBasePlayer::SetObserverTarget(CBaseEntity *target)
 		trace_t	tr;
 		UTIL_TraceRay( ray, MASK_PLAYERSOLID, target, COLLISION_GROUP_PLAYER_MOVEMENT, &tr );
 
-		JumptoPosition( tr.endpos, ang );
+		JumptoPosition( tr.endpos, target->EyeAngles() );
 	}
 	
 	return true;
@@ -3416,8 +3411,6 @@ void CBasePlayer::ForceSimulation()
 	m_nSimulationTick = -1;
 }
 
-ConVar sv_usercmd_custom_random_seed( "sv_usercmd_custom_random_seed", "1", FCVAR_CHEAT, "When enabled server will populate an additional random seed independent of the client" );
-
 //-----------------------------------------------------------------------------
 // Purpose: 
 // Input  : *buf - 
@@ -3442,16 +3435,6 @@ void CBasePlayer::ProcessUsercmds( CUserCmd *cmds, int numcmds, int totalcmds,
 		if ( !IsUserCmdDataValid( pCmd ) )
 		{
 			pCmd->MakeInert();
-		}
-
-		if ( sv_usercmd_custom_random_seed.GetBool() )
-		{
-			float fltTimeNow = float( Plat_FloatTime() * 1000.0 );
-			pCmd->server_random_seed = *reinterpret_cast<int*>( (char*)&fltTimeNow );
-		}
-		else
-		{
-			pCmd->server_random_seed = pCmd->random_seed;
 		}
 
 		ctx->cmds.AddToTail( *pCmd );
@@ -7892,7 +7875,7 @@ void CMovementSpeedMod::InputSpeedMod(inputdata_t &data)
 			// Bring the weapon back
 			if  ( HasSpawnFlags( SF_SPEED_MOD_SUPPRESS_WEAPONS ) && pPlayer->GetActiveWeapon() == NULL )
 			{
-				pPlayer->SetActiveWeapon( pPlayer->GetLastWeapon() );
+				pPlayer->SetActiveWeapon( pPlayer->Weapon_GetLast() );
 				if ( pPlayer->GetActiveWeapon() )
 				{
 					pPlayer->GetActiveWeapon()->Deploy();
@@ -8874,6 +8857,8 @@ void CBasePlayer::SetPlayerName( const char *name )
 		Assert( strlen(name) > 0 );
 
 		Q_strncpy( m_szNetname, name, sizeof(m_szNetname) );
+		// Be extra thorough
+		Q_RemoveAllEvilCharacters( m_szNetname );
 	}
 }
 
