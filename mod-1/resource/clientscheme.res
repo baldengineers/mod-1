@@ -115,14 +115,14 @@ Scheme
 		{
 			"1"	[$X360]
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"12"
 				"weight"	"700"
 				"antialias" "1"
 			}
 			"1"	[$WIN32]
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"9"
 				"weight"	"700"
 				"antialias" "1"
@@ -130,7 +130,7 @@ Scheme
 			}
 			"2"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"12"
 				"weight"	"700"
 				"antialias" "1"
@@ -138,7 +138,7 @@ Scheme
 			}
 			"3"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"14"
 				"weight"	"900"
 				"antialias" "1"
@@ -146,7 +146,7 @@ Scheme
 			}
 			"4"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"20"
 				"weight"	"900"
 				"antialias" "1"
@@ -154,7 +154,7 @@ Scheme
 			}
 			"5"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"24"
 				"weight"	"900"
 				"antialias" "1"
@@ -459,7 +459,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"8"
 				"weight"	"700"
 				"antialias" "1"
@@ -467,7 +467,7 @@ Scheme
 			}
 			"2"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"10"
 				"weight"	"700"
 				"antialias" "1"
@@ -475,7 +475,7 @@ Scheme
 			}
 			"3"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"12"
 				"weight"	"900"
 				"antialias" "1"
@@ -483,7 +483,7 @@ Scheme
 			}
 			"4"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"16"
 				"weight"	"900"
 				"antialias" "1"
@@ -491,7 +491,7 @@ Scheme
 			}
 			"5"
 			{
-				"name"		"Verdana"
+				"name"		"Armalite Rifle"
 				"tall"		"17"
 				"weight"	"1000"
 				"antialias" "1"
@@ -632,7 +632,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"  "HalfLife2"
+				"name"  "Armalite Rifle"
 				"tall"			"32"
 				"tall_hidef"	"46"
 				"weight" "0"
@@ -794,6 +794,7 @@ Scheme
 	{
 		"1"		"resource/HALFLIFE2.ttf"
 		"2"		"resource/HL2crosshairs.ttf"
+		"3"		"resource/armalite_rifle.ttf"
 	}
 
 }

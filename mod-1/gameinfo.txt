@@ -1,8 +1,9 @@
 "GameInfo"
 {
 	game 		"WORK MOD"
-	title 		"WORK MOD"
+	title 		"BALD COMMANDOS"
 	type		multiplayer_only
+	//gamelogo	1
 
 	FileSystem
 	{
