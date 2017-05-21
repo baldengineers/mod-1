@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "models/props/Flag"
+	"$translucent" 1
+}

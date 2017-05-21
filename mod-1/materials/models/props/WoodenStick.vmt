@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/props/WoodenStick"
+	"$translucent" 1
+}
