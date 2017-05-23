@@ -7,7 +7,7 @@
 
 	FileSystem
 	{
-		SteamAppId					243750				// Source SDK Base 2013 Singleplayer
+		SteamAppId					243750				// Source SDK Base 2013 Multiplayer
 		SearchPaths
 		{
 			// No /custom/ folders because they can interfere with mod content and shouldn't be in mod gameinfo.

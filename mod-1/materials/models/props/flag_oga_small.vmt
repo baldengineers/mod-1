@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\props\flag_oga_small"
+	$translucent 1
+}

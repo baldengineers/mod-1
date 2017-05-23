@@ -1,8 +1,9 @@
-$modelname	"props\Flag.mdl"
-$body mybody	"Flag.smd"
-$surfaceprop	combine_metal
+$modelname	"props\flag.mdl"
+$scale 10
+$body mybody	"flag.smd"
+$surfaceprop	metal
 $cdmaterials	"models\props"
 
-$sequence idle	"anims\Action.smd"
+$sequence idle	"anims\action.smd" loop fps 30
 
-$collisionmodel	"Flag.smd" { $concave }
+$collisionmodel	"flag.smd" { $concave }
