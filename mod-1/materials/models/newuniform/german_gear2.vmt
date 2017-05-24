@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models\newuniform\german_gear2"
+	"$bumpmap" "models\newuniform\german_gear2_normal"	
+							
+}

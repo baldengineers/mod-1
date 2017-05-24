@@ -26,6 +26,7 @@
 	 
 			// TODO; find out what is it and why it's here
 			game					|all_source_engine_paths|hl2
+			Game				    |all_source_engine_paths|sourcetest
 			platform				|all_source_engine_paths|platform
 		}
 	}

@@ -40,9 +40,6 @@
     <Filter Include="VPC Scripts">
       <UniqueIdentifier>{A40EE377-781A-C6B9-0C7C-B3BE118D248E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Test">
-      <UniqueIdentifier>{933d7daf-4ad2-45a8-8a3f-2cce01d2587b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\lib\public\choreoobjects.lib">
@@ -3558,12 +3555,6 @@
     </ClCompile>
     <ClCompile Include="toolframework_server.cpp">
       <Filter>Tools Framework</Filter>
-    </ClCompile>
-    <ClCompile Include="sdk_logicalentity.cpp">
-      <Filter>Test</Filter>
-    </ClCompile>
-    <ClCompile Include="sdk_modelentity.cpp">
-      <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

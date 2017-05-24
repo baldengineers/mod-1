@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\newuniform\gasmask"
+	"$model" "1"
+                "$halflambert" 1
+                "$translucent" 1
+                 "$alphatest" 1
+}

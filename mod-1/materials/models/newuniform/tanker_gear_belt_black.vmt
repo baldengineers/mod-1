@@ -1,0 +1,12 @@
+"vertexlitgeneric"
+{
+	"$baseTexture"		"models\newuniform\Tanker_Gear_Belt_Black"
+
+ 	"$halflambert"		"1"
+
+	"$phong"			"1"
+	"$phongboost"		"2"
+	"$phongfresnelranges"	"[0.01]"
+	"$phongexponent"		"10"
+	"$phongalbedotint"		"1"
+}

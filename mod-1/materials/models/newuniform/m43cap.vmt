@@ -1,0 +1,12 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/newuniform/m43cap"
+	"$bumpmap" "models/newuniform/m43cap_normal"	
+$phong 1
+$phongboost 1
+$phongexponent 9
+$phongtint "[.85 .85 1]"
+$phongfresnelranges "[.3 3 30]"
+$nodecal 1
+$ambientocclusion 1
+}

@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" 	"Models/hands/arms_black"
+	"$surfaceprop" "Metal"
+	"$nocull" 1
+}

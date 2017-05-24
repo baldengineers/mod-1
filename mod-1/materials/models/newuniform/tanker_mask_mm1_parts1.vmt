@@ -1,0 +1,13 @@
+"vertexlitgeneric"
+{
+	"$baseTexture"		"models\newuniform\Tanker_Mask_MM1_Parts1"
+	"$bumpmap"		"models\newuniform\Tanker_Mask_MM1_Parts1_N"
+
+ 	"$halflambert"		"1"
+
+	"$phong"			"1"
+	"$phongboost"		"5"
+	"$phongfresnelranges"	"[0.01]"
+	"$phongexponent"		"10"
+	"$phongalbedotint"		"1"
+}
