@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+	"$basetexture" 	"models/weapons/oar"
+	"$bumpmap"	"models/weapons/oar_normal"
+}
