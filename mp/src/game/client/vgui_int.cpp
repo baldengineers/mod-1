@@ -19,6 +19,7 @@
 #include <vgui/IInput.h>
 #include "tier0/vprof.h"
 #include "iclientmode.h"
+#include "ISoundPanel.h"
 #include <vgui_controls/Panel.h>
 #include <KeyValues.h>
 #include "filesystem.h"
@@ -207,6 +208,9 @@ void VGui_CreateGlobalPanels( void )
 
 	// Debugging or related tool
 	fps->Create( toolParent );
+
+	
+
 #if defined( TRACK_BLOCKING_IO )
 	iopanel->Create( gameDLLPanel );
 #endif
@@ -220,6 +224,9 @@ void VGui_CreateGlobalPanels( void )
 #ifdef SIXENSE
 	g_pSixenseInput->CreateGUI( gameToolParent );
 #endif
+	//menu music
+	VPANEL GameUiDll = enginevgui->GetPanel(PANEL_GAMEUIDLL);
+	soundpanel->Create(GameUiDll);
 }
 
 void VGui_Shutdown()
@@ -240,7 +247,7 @@ void VGui_Shutdown()
 	messagechars->Destroy();
 	loadingdisc->Destroy();
 	internalCenterPrint->Destroy();
-
+	soundpanel->Destroy();
 	if ( g_pClientMode )
 	{
 		g_pClientMode->VGui_Shutdown();
