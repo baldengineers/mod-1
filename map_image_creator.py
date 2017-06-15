@@ -45,7 +45,7 @@ while True:
             for j in range(image_width):
                 if total_im.getpixel((j,i)) == latest_image_topline[j]:
                     count += 1
-            if count >= 500:
+            if count >= .3*1244:
                 seam = i
         print(seam)
         total_im = total_im.crop( (0,0,image_width,seam))
