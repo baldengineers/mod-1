@@ -45,7 +45,7 @@ while True:
             for j in range(image_width):
                 if total_im.getpixel((j,i)) == latest_image_topline[j]:
                     count += 1
-            if count >= .3*1244:
+            if count >= .3*1244: #DEPENDING ON THE MAP, THIS VALUE MUST BE CHANGED. GENERALLY HIGHER IF THERE ARE FEWER MOVING PIECES (WATER, DIFFERENT DISTANCE PIECES, ETC)
                 seam = i
         print(seam)
         total_im = total_im.crop( (0,0,image_width,seam))
@@ -57,7 +57,7 @@ while True:
     vert_list.append(total_im.copy())
     temp_im = ImageGrab.grab(bbox=(2,65,1246,719))
     pyautogui.keyDown("right")
-    time.sleep(1)
+    time.sleep(1.6)
     pyautogui.keyUp("right")
     time.sleep(1)
     new_im = ImageGrab.grab(bbox=(2,65,1246,719))
@@ -66,7 +66,7 @@ while True:
         for x in range(1244):
             if temp_im.getpixel((x,y)) == new_im.getpixel((x,y)):
                 simcount += 1
-    if simcount/(654*1244) > .35:
+    if simcount/(654*1244) > .3: #DEPENDING ON THE MAP'S LAST FRAME, THIS VALUE MUST BE CHANGED. GENERALLY HIGHER IF THERE ARE FEWER MOVING PIECES (WATER, DIFFERENT DISTANCE PIECES, ETC)
         total_im = vert_list[0]
         for i in range(1,len(vert_list)):
             vert_last =[]
@@ -87,7 +87,7 @@ while True:
         print("done stitching")
         break
     pyautogui.keyDown("up")
-    time.sleep(5)
+    time.sleep(5.5)
     pyautogui.keyUp("up")
 
 
